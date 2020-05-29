@@ -5,7 +5,7 @@ This project will be a study case of a microservice application. I intend to use
 - Node with Nest.js
 - Docker
 - Kubernetes 
-- CI/CD
+- CI/CD with GitHub Actions
 - Redis
 - MongoDb
 - PostgreSQL
