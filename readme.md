@@ -2,7 +2,8 @@
 
 This project will be a study case of a microservice application. I intend to use:
 
-- Node with Nest.js
+- Node
+- Deno
 - Docker
 - Kubernetes 
 - CI/CD with GitHub Actions
