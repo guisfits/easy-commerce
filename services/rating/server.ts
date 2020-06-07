@@ -1,11 +1,14 @@
 import { Application } from 'https://deno.land/x/oak/mod.ts'
 import router from './routes.ts'
 
-const port = 8001;
+const env = Deno.env.toObject();
+const HOST = env.HOST || '127.0.0.1';
+const PORT = env.PORT || 8001;
+
 const app = new Application();
 
 app.use(router.routes());
 app.use(router.allowedMethods());
 
-console.log(`Running on port ${port}`);
-await app.listen({ port });
+console.log(`Running on ${HOST}:${PORT}`);
+await app.listen(`${HOST}:${PORT}`);
