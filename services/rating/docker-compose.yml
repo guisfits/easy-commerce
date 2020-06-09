@@ -1,0 +1,18 @@
+version: "3.1"
+
+services:
+  database:
+    image: postgres
+    restart: always
+    container_name: "ec.rating.db"
+    environment:
+      POSTGRES_DB: rating
+      POSTGRES_USER: easy_commerce
+      POSTGRES_PASSWORD: password
+    ports:
+      - "5401:5432"
+#     volumes:
+#       - "ec.rating.data:/var/lib/postgresql/data"
+
+# volumes:
+#   ec.rating.data:
