@@ -16,6 +16,9 @@ export default class Rating extends Model {
     comment: {
       type: DataTypes.TEXT,
     },
-    productId: Relationships.belongsTo(Product)
+    productId: {
+      type: DataTypes.UUID,
+      relationsip: Relationships.belongsTo(Product)
+    }
   };
 }

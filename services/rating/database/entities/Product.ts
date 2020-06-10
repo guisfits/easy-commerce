@@ -1,4 +1,5 @@
 import { Model, DataTypes } from 'https://deno.land/x/denodb/mod.ts';
+import Rating from './Rating.ts';
 
 export default class Product extends Model {
   static table = 'products';
@@ -14,4 +15,8 @@ export default class Product extends Model {
       length: 250
     }
   };
+
+  static ratings() {
+    return this.hasMany(Rating)
+  }
 }

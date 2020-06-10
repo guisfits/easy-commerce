@@ -1,9 +1,9 @@
-import { Database } from 'https://deno.land/x/denodb/mod.ts';
+import { Database, Model, DataTypes } from 'https://deno.land/x/denodb/mod.ts';
 import Buyer from './entities/Buyer.ts';
 import Product from './entities/Product.ts';
 import Rating from './entities/Rating.ts';
 
-const db = new Database('postgres', {
+const db = new Database({ dialect: "postgres", debug: true }, {
   database: 'rating',
   host: 'localhost',
   port: 5401,
@@ -11,8 +11,12 @@ const db = new Database('postgres', {
   password: 'password',
 });
 
-db.link([Buyer, Rating, Product]);
-db.sync({ drop: true });
+db.link([Buyer, Product, Rating]);
 
-export default db;
+export const initialize = () => {
+  db.sync({ drop: true });
+}
 
+export const finalize = () => {
+  db.close();
+}

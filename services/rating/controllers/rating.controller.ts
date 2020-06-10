@@ -1,11 +1,9 @@
-import ratings from '../database/ratings.ts';
+import Rating from '../database/entities/Rating.ts';
 
 class RatingController {
-  index({ response }: { response: any }) {
-    response.body = {
-      success: true,
-      data: ratings
-    };
+  async index({ response }: { response: any }) {
+    const ratings = await Rating.all();
+    response.body = { success: true, data: ratings };
   }
 }
 
