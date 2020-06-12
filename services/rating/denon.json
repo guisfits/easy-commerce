@@ -1,35 +1,21 @@
 {
   "$schema": "https://deno.land/x/denon/schema.json",
+  "allow": [
+    "env",
+    "net",
+    "read",
+    "write",
+    "plugin"
+  ],
+  "env": {
+    "PORT": "8001",
+    "HOST": "localhost"
+  },
+  "tsconfig": "tsconfig.json",
+  "unstable": true,
   "scripts": {
-    "start": {
-      "cmd": "deno run server.ts",
-      "allow": [
-        "env",
-        "net",
-        "read",
-        "write",
-        "plugin"
-      ],
-      "env": {
-        "PORT": "8001",
-        "HOST": "localhost"
-      },
-      "tsconfig": "tsconfig.json",
-      "unstable": true
-    },
-    "debug": {
-      "cmd": "deno run --inspect-brk server.ts",
-      "allow": [
-        "env",
-        "net",
-        "read"
-      ],
-      "env": {
-        "PORT": "8001",
-        "HOST": "localhost"
-      },
-      "unstable": true
-    }
+    "start": "server.ts",
+    "debug": "deno run --inspect-brk server.ts"
   },
   "logger": {
     "debug": true

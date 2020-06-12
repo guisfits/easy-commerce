@@ -6,6 +6,10 @@ class RatingController {
 
   private _repository: Repository<Rating> | undefined;
 
+  constructor() {
+    this._repository = connection?.getRepository(Rating);
+  }
+
   async index({ response }: { response: any }) {
     const ratings = await connection?.manager.find(Rating);
     response.body = { success: true, data: ratings };
