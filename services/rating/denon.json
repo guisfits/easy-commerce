@@ -14,8 +14,7 @@
   "tsconfig": "tsconfig.json",
   "unstable": true,
   "scripts": {
-    "start": "server.ts",
-    "debug": "deno run --inspect-brk server.ts"
+    "start": "server.ts"
   },
   "logger": {
     "debug": true
