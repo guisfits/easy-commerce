@@ -2,10 +2,9 @@ import { Application } from 'https://deno.land/x/oak/mod.ts'
 
 import { HOST, PORT } from './config.ts';
 import router from './routes.ts'
-import { initializeDb, seed } from './database/connection.ts';
+import RatingConnection from './database/connection.ts';
 
-await initializeDb();
-await seed();
+await RatingConnection.connect();
 
 const app = new Application();
 
