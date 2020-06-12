@@ -1,22 +1,40 @@
-import { Database, Model, DataTypes } from 'https://deno.land/x/denodb/mod.ts';
-import Buyer from './entities/Buyer.ts';
-import Product from './entities/Product.ts';
-import Rating from './entities/Rating.ts';
+import { createConnection, Connection } from "https://denolib.com/denolib/typeorm@v0.2.23-rc4/mod.ts";
 
-const db = new Database({ dialect: "postgres", debug: true }, {
-  database: 'rating',
-  host: 'localhost',
-  port: 5401,
-  username: 'easy_commerce',
-  password: 'password',
-});
+import Buyer from "./entities/Buyer.ts";
+import Product from "./entities/Product.ts";
+import Rating from "./entities/Rating.ts";
 
-db.link([Buyer, Product, Rating]);
+let connection: Connection | null;
 
-export const initialize = () => {
-  db.sync({ drop: true });
+async function initializeDb() { 
+  try {
+
+    if (connection?.isConnected) {
+      return;
+    }
+
+    console.log("creating new db-connection...")
+
+    connection = await createConnection({
+      type: "postgres",
+      host: "localhost",
+      port: 5401,
+      username: "easy_commerce",
+      password: "password",
+      database: "rating",
+      entities: [
+        Rating,
+        Product,
+        Buyer,
+      ],
+      synchronize: true,
+      logging: true,
+    });
+
+  } catch (err) {
+    console.error(err);
+    connection = null;
+  }
 }
 
-export const finalize = () => {
-  db.close();
-}
+export { connection, initializeDb }

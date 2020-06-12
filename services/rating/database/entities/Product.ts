@@ -1,22 +1,15 @@
-import { Model, DataTypes } from 'https://deno.land/x/denodb/mod.ts';
-import Rating from './Rating.ts';
+import { Entity, PrimaryGeneratedColumn, Column, OneToMany } from "https://denolib.com/denolib/typeorm@v0.2.23-rc4/mod.ts"
+import Rating from "./Rating.ts";
 
-export default class Product extends Model {
-  static table = 'products';
-  static timestamps = true;
+@Entity("products")
+export default class Product {
 
-  static fields = {
-    id: {
-      type: DataTypes.UUID,
-      primaryKey: true
-    },
-    name: {
-      type: DataTypes.STRING,
-      length: 250
-    }
-  };
+  @PrimaryGeneratedColumn()
+  id!: number;
 
-  static ratings() {
-    return this.hasMany(Rating)
-  }
+  @Column({ type: "varchar", length: 256 })
+  name!: string;
+
+  @OneToMany(type => Rating, x => x?.product)
+  ratings!: Rating[];
 }
