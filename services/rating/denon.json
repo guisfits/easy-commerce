@@ -7,14 +7,16 @@
     "write",
     "plugin"
   ],
-  "env": {
-    "PORT": "8001",
-    "HOST": "localhost"
-  },
   "tsconfig": "tsconfig.json",
   "unstable": true,
   "scripts": {
-    "start": "server.ts"
+    "start": {
+      "cmd": "server.ts",
+      "env": {
+        "PORT": "8001",
+        "HOST": "localhost"
+      }
+    }
   },
   "logger": {
     "debug": true
