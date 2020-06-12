@@ -1,24 +1,22 @@
-import { Model, DataTypes, Relationships } from 'https://deno.land/x/denodb/mod.ts';
-import Product from './Product.ts';
+import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, ManyToMany } from "https://denolib.com/denolib/typeorm@v0.2.23-rc4/mod.ts"
+import Product from "./Product.ts";
+import Buyer from "./Buyer.ts";
 
-export default class Rating extends Model {
-  static table = 'products';
-  static timestamps = true;
+@Entity("ratings")
+export default class Rating {
 
-  static fields = {
-    id: {
-      type: DataTypes.UUID,
-      primaryKey: true
-    },
-    rate: {
-      type: DataTypes.INTEGER
-    },
-    comment: {
-      type: DataTypes.TEXT,
-    },
-    productId: {
-      type: DataTypes.UUID,
-      relationsip: Relationships.belongsTo(Product)
-    }
-  };
+  @PrimaryGeneratedColumn()
+  id!: number;
+
+  @Column({ type: "int" })
+  rate!: number;
+
+  @Column({ type: "text" })
+  comment!: string;
+
+  @ManyToOne(type => Product, _ => _?.ratings)
+  product: Product | null = null;
+
+  @ManyToOne(type => Buyer, _ => _.ratings)
+  buyer: Buyer | null = null;
 }
