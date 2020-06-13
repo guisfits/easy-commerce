@@ -1,9 +1,10 @@
 {
-  "typescript.tsdk": "/Users/user/.asdf/installs/nodejs/12.16.2/.npm/lib/node_modules/typescript/lib",
+  "typescript.tsdk": "~/.asdf/installs/nodejs/12.18.0/.npm/lib/node_modules/typescript/lib",
   "[typescript]": {
     "editor.defaultFormatter": "vscode.typescript-language-features",
   },
   "deno.enable": true,
   "deno.unstable": false,
+  "cSpell.enabled": true,
 }
    
