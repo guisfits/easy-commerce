@@ -10,6 +10,6 @@ export default class Product {
   @Column({ type: "varchar", length: 256 })
   name!: string;
 
-  @OneToMany(type => Rating, x => x?.product)
+  @OneToMany(type => Rating, x => x.product)
   ratings!: Rating[];
 }
