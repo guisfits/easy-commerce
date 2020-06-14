@@ -5,6 +5,5 @@
   },
   "deno.enable": true,
   "deno.unstable": false,
-  "cSpell.enabled": true,
 }
    
