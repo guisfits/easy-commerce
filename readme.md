@@ -1,6 +1,8 @@
 # EasyCommerce
 
-This project will be a study case of a microservice application. I intend to use:
+This project will be a study case of a microservice application. It is inspired from [coolstore project](https://github.com/vietnam-devs/coolstore-microservices)
+ 
+ I intend to use:
 
 - Node
 - Deno
@@ -16,8 +18,6 @@ This project will be a study case of a microservice application. I intend to use
 - EventSourcing
 - CQRS
 - Clean Architecture
-
-The project is inspired from [coolstore project](https://github.com/vietnam-devs/coolstore-microservices)
 
 
 
