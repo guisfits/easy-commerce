@@ -4,6 +4,5 @@
     "editor.defaultFormatter": "vscode.typescript-language-features",
   },
   "deno.enable": true,
-  "deno.unstable": false,
+  "deno.unstable": true,
 }
-   

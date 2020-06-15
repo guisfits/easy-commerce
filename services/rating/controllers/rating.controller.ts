@@ -4,7 +4,6 @@ import ProductRepository from '../database/repositories/product.repository.ts';
 import Rating from '../database/entities/Rating.ts';
 import { Context } from "https://deno.land/x/oak/mod.ts";
 
-
 class RatingController {
 
   async index({ response }: Context) {
