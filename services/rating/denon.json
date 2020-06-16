@@ -11,7 +11,7 @@
   "unstable": true,
   "scripts": {
     "start": {
-      "cmd": "server.ts",
+      "cmd": "src/server.ts",
       "env": {
         "PORT": "8001",
         "HOST": "localhost"
