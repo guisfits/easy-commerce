@@ -1,5 +1,4 @@
-import { Application } from 'https://deno.land/x/oak/mod.ts'
-
+import { Application } from './deps.ts'
 import { APP_PORT } from './env.ts';
 import router from './routes.ts'
 import RatingConnection from './database/connection.ts';

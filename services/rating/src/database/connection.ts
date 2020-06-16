@@ -1,4 +1,4 @@
-import { createConnection, Connection } from "https://denolib.com/denolib/typeorm@v0.2.23-rc4/mod.ts";
+import { createConnection, Connection } from "../deps.ts";
 
 import Buyer from "./entities/buyer.entity.ts";
 import Product from "./entities/product.entity.ts";

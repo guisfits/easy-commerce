@@ -1,4 +1,4 @@
-import { Entity, PrimaryGeneratedColumn, Column, OneToMany } from "https://denolib.com/denolib/typeorm@v0.2.23-rc4/mod.ts"
+import { Entity, PrimaryGeneratedColumn, Column, OneToMany } from "../../deps.ts";
 import Rating from "./rating.entity.ts";
 
 @Entity("products")

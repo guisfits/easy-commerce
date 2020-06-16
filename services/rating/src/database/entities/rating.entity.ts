@@ -1,4 +1,4 @@
-import { Entity, PrimaryGeneratedColumn, Column, ManyToOne } from "https://denolib.com/denolib/typeorm@v0.2.23-rc4/mod.ts"
+import { Entity, PrimaryGeneratedColumn, Column, ManyToOne } from "../../deps.ts";
 import Product from "./product.entity.ts";
 import Buyer from "./buyer.entity.ts";
 

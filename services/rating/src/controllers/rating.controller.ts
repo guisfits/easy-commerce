@@ -1,8 +1,8 @@
+import { Context } from "../deps.ts";
 import RatingRepository from '../database/repositories/rating.repository.ts';
 import BuyerRepository from '../database/repositories/buyer.repository.ts';
 import ProductRepository from '../database/repositories/product.repository.ts';
 import Rating from '../database/entities/rating.entity.ts';
-import { Context } from "https://deno.land/x/oak/mod.ts";
 
 class RatingController {
 

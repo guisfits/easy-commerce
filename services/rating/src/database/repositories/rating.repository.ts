@@ -1,4 +1,4 @@
-import { Repository } from 'https://denolib.com/denolib/typeorm@v0.2.23-rc4/mod.ts';
+import { Repository } from '../../deps.ts';
 import Rating from '../entities/rating.entity.ts';
 import RatingConnection from '../connection.ts';
 

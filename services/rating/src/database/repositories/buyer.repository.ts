@@ -1,5 +1,4 @@
-
-import { Repository } from 'https://denolib.com/denolib/typeorm@v0.2.23-rc4/mod.ts';
+import { Repository } from '../../deps.ts';
 import RatingConnection from '../connection.ts';
 import Buyer from '../entities/buyer.entity.ts';
 
