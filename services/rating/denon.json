@@ -10,11 +10,15 @@
   "tsconfig": "tsconfig.json",
   "unstable": true,
   "scripts": {
-    "start": {
+    "dev": {
       "cmd": "src/server.ts",
       "env": {
-        "PORT": "8001",
-        "HOST": "localhost"
+        "APP_PORT": "8001",
+        "DB_HOST": "localhost",
+        "DB_PORT": "5401",
+        "DB_USERNAME": "easy_commerce",
+        "DB_PASSWORD": "password",
+        "DB_DATABASE": "rating"
       }
     }
   },

@@ -3,6 +3,7 @@ import { createConnection, Connection } from "https://denolib.com/denolib/typeor
 import Buyer from "./entities/buyer.entity.ts";
 import Product from "./entities/product.entity.ts";
 import Rating from "./entities/rating.entity.ts";
+import * as env from "../env.ts";
 
 class RatingConnection {
 
@@ -12,11 +13,11 @@ class RatingConnection {
     try {
       this.connection = await createConnection({
         type: "postgres",
-        host: "localhost",
-        port: 5401,
-        username: "easy_commerce",
-        password: "password",
-        database: "rating",
+        host: env.DB_HOST,
+        port: env.DB_PORT,
+        username: env.DB_USERNAME,
+        password: env.DB_PASSWORD,
+        database: env.DB_DATABASE,
         entities: [
           Rating,
           Product,
