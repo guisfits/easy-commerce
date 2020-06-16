@@ -1,6 +1,6 @@
 import { Entity, PrimaryGeneratedColumn, Column, ManyToOne } from "https://denolib.com/denolib/typeorm@v0.2.23-rc4/mod.ts"
-import Product from "./Product.ts";
-import Buyer from "./Buyer.ts";
+import Product from "./product.entity.ts";
+import Buyer from "./buyer.entity.ts";
 
 @Entity("ratings")
 export default class Rating {

@@ -1,8 +1,8 @@
 import { createConnection, Connection } from "https://denolib.com/denolib/typeorm@v0.2.23-rc4/mod.ts";
 
-import Buyer from "./entities/Buyer.ts";
-import Product from "./entities/Product.ts";
-import Rating from "./entities/Rating.ts";
+import Buyer from "./entities/buyer.entity.ts";
+import Product from "./entities/product.entity.ts";
+import Rating from "./entities/rating.entity.ts";
 
 class RatingConnection {
 
