@@ -13,4 +13,4 @@ export {
   OneToMany,
   ManyToOne,
   Repository
-} from "https://denolib.com/denolib/typeorm@v0.2.23-rc4/mod.ts";
+} from 'https://denolib.com/denolib/typeorm@v0.2.23-rc4/mod.ts';

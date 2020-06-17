@@ -2,15 +2,12 @@
   "$schema": "https://deno.land/x/denon/schema.json",
   "allow": [
     "env",
-    "net",
-    "read",
-    "write",
-    "plugin"
+    "net"
   ],
-  "tsconfig": "tsconfig.json",
+  "tsconfig": "src/tsconfig.json",
   "unstable": true,
   "scripts": {
-    "dev": {
+    "start": {
       "cmd": "src/server.ts",
       "env": {
         "APP_PORT": "8001",
