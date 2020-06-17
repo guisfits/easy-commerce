@@ -1,18 +1,43 @@
 version: "3.1"
 
 services:
+  app:
+    build: .
+    env_file:
+      - .env
+    environment: 
+      APP_PORT: ${APP_PORT}
+      DB_HOST: ${DB_HOST}
+      DB_PORT: ${DB_PORT}
+      DB_USERNAME: ${DB_USERNAME}
+      DB_PASSWORD: ${DB_PASSWORD}
+      DB_DATABASE: ${DB_DATABASE}
+    ports:
+      - ${APP_PORT}:8080
+    networks: 
+      - "ec-rating-net"
+    depends_on: 
+      - database
   database:
     image: postgres
     restart: always
     container_name: "ec.rating.db"
+    env_file:
+      - .env
     environment:
-      POSTGRES_DB: rating
-      POSTGRES_USER: easy_commerce
-      POSTGRES_PASSWORD: password
+      POSTGRES_DB: ${DB_DATABASE} 
+      POSTGRES_USER: ${DB_USERNAME}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
     ports:
-      - "5401:5432"
+      - ${DB_PORT}:5432
     volumes:
       - "ec.rating.data:/var/lib/postgresql/data"
+    networks: 
+      - "ec-rating-net"
 
 volumes:
   ec.rating.data:
+
+networks:
+  ec-rating-net:
+    driver: bridge
