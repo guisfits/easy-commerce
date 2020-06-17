@@ -22,4 +22,4 @@ With Rating, Buyer can rate any product that she thinks is good (1 -> 5 stars).
 - oak
 - TypeORM
 - Postgres
-- Docker-Compose
+- Docker

@@ -11,4 +11,5 @@ app.use(router.routes());
 app.use(router.allowedMethods());
 
 console.log(`Running on port ${env.APP_PORT}`);
-await app.listen({ port: env.APP_PORT });
+await app.listen({ port: env.APP_PORT_INTERNAL || env.APP_PORT });
+
