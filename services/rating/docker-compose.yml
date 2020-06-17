@@ -5,25 +5,25 @@ services:
     build: .
     env_file:
       - .env
+    restart: always
     environment: 
       APP_PORT: ${APP_PORT}
       DB_HOST: ${DB_HOST}
-      DB_PORT: ${DB_PORT}
+      DB_PORT: 5432
       DB_USERNAME: ${DB_USERNAME}
       DB_PASSWORD: ${DB_PASSWORD}
       DB_DATABASE: ${DB_DATABASE}
     ports:
-      - ${APP_PORT}:8080
-    networks: 
-      - "ec-rating-net"
+      - ${APP_PORT}:8001
     depends_on: 
       - database
+    networks: 
+      - rating-net
   database:
     image: postgres
-    restart: always
-    container_name: "ec.rating.db"
     env_file:
       - .env
+    restart: unless-stopped
     environment:
       POSTGRES_DB: ${DB_DATABASE} 
       POSTGRES_USER: ${DB_USERNAME}
@@ -33,11 +33,11 @@ services:
     volumes:
       - "ec.rating.data:/var/lib/postgresql/data"
     networks: 
-      - "ec-rating-net"
+      - rating-net
 
 volumes:
   ec.rating.data:
 
 networks:
-  ec-rating-net:
-    driver: bridge
+  rating-net:
+      driver: bridge
