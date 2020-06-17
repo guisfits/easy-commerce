@@ -3,7 +3,7 @@ import { createConnection, Connection } from "../deps.ts";
 import Buyer from "./entities/buyer.entity.ts";
 import Product from "./entities/product.entity.ts";
 import Rating from "./entities/rating.entity.ts";
-import * as env from "../env.ts";
+import env from "../env.ts";
 
 class RatingConnection {
 

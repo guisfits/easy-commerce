@@ -1,8 +1,13 @@
-const env = Deno.env.toObject();
+const denoEnv = Deno.env.toObject();
 
-export const APP_PORT = Number(env.APP_PORT);
-export const DB_HOST = env.DB_HOST;
-export const DB_PORT = Number(env.DB_PORT);
-export const DB_USERNAME = env.DB_USERNAME;
-export const DB_PASSWORD = env.DB_PASSWORD;
-export const DB_DATABASE = env.DB_DATABASE;
+const env = {
+  APP_PORT: Number(denoEnv.APP_PORT),
+  DB_HOST: denoEnv.DB_HOST,
+  DB_PORT: Number(denoEnv.DB_PORT),
+  DB_USERNAME: denoEnv.DB_USERNAME,
+  DB_PASSWORD: denoEnv.DB_PASSWORD,
+  DB_DATABASE: denoEnv.DB_DATABASE,
+}
+
+console.log(env);
+export default env;
