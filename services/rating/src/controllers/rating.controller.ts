@@ -10,7 +10,7 @@ class RatingController {
 
     const ratings = await RatingRepository.instance
       .createQueryBuilder('ratings')
-      .select(['ratings', 'product.name', 'buyer.firstName'])
+      .select(['ratings', 'product.name', 'buyer.fullName'])
       .leftJoin('ratings.product', 'product')
       .leftJoin('ratings.buyer', 'buyer')
       .getMany();
@@ -22,7 +22,7 @@ class RatingController {
           id: rating.id,
           comment: rating.comment,
           rate: rating.rate,
-          buyer: rating.buyer.firstName,
+          buyer: rating.buyer.fullName,
           product: rating.product.name
         }
       })

@@ -8,7 +8,7 @@ export default class Buyer {
   id!: number;
 
   @Column({ type: "varchar", length: 256 })
-  firstName!: string;
+  fullName!: string;
 
   @OneToMany(type => Rating, _ => _.buyer)
   ratings!: Rating[];
