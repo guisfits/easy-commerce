@@ -14,10 +14,10 @@
         "run",
         "--unstable",
         "--config",
-        "tsconfig.json",
+        "src/tsconfig.json",
         "--inspect-brk",
         "-A",
-        "server.ts"
+        "src/server.ts"
       ],
       "port": 9229
     }

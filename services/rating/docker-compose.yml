@@ -9,7 +9,6 @@ services:
     environment: 
       APP_PORT: ${APP_PORT}
       APP_PORT_INTERNAL: 3333
-      DB_TYPE: postgres
       DB_HOST: ${DB_HOST}
       DB_PORT: 5432
       DB_USERNAME: ${DB_USERNAME}
