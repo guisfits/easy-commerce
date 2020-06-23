@@ -2,8 +2,6 @@
 
 With **Shopping Cart**, **Buyer** can **buy** any **product** on the **product list** via the Buy button on any product. Besides, she can **buy** the product in the **detail product page**. After bought product, she should see these products in the shopping cart and the **summary panel** with basic information such as cart total cost, promotion item saving cost, subtotal cost, shipping cost, promotion shipping savings cost, total order amount. And whenever she **buy more products** or **remove some products** out of the cart, then the **summary panel** and **shopping cart** should be **updated**. After all, she can do a **checkout process** to pay money by clicking the Check Out button on the shopping cart page. **SysAdmin** can **see all the shopping cart of any user** so that he can **enable or disable** any invalid shopping cart in CoolStore website.
 
-![usecases](./docs/usecases.png)
-
 ## Event-Storming
 
 - **Buyer** create the shopping cart with product
@@ -47,3 +45,13 @@ With **Shopping Cart**, **Buyer** can **buy** any **product** on the **product l
 - **Buyer** check out my shopping cart -> check out the shopping cart (**PUT**)
 - **SysAdmin** see shopping cart of all buyers with information -> get shopping cart of buyers (**GET**)
 - **SysAdmin** enable/disable any shopping cart of any buyer -> update enabled/disabled shopping cart of buyer (**PUT**)
+
+## Technologies
+- Node
+- Typescript
+- Nest.js
+- Jest
+- ~~MongoDb~~
+- ~~Swagger~~
+- ~~Docker~~
+- ~~Docker-Compose~~
