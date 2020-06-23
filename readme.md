@@ -38,6 +38,7 @@ I **intend** to use:
 - [ ] Saga
 - [ ] API Gateway
 - [ ] Anti-Corruption Layer
+- [ ] API Versioning
 
 ### Security
 - [ ] JWT
