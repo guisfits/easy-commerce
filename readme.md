@@ -1,6 +1,6 @@
 # EasyCommerce
 
-This project is a study case of a microservice application. It is inspired from [coolstore project](https://github.com/vietnam-devs/coolstore-microservices)
+This project is a case study of a microservices application. It is inspired from [coolstore project](https://github.com/vietnam-devs/coolstore-microservices)
  
 I **intend** to use:
 
