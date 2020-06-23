@@ -2,7 +2,7 @@
 
 This project is a study case of a microservice application. It is inspired from [coolstore project](https://github.com/vietnam-devs/coolstore-microservices)
  
-I creating it with JS Stack, I intend to use:
+I creating it with JS Stack, I **intend** to use:
 
 ### Languages
 - [ ] Full Javascript
@@ -24,17 +24,18 @@ I creating it with JS Stack, I intend to use:
 - [ ] ElasticSearch
 
 ### Communication style
-- [ ] RabbitMQ (async)
-- [ ] GraphQL (sync)
-- [ ] gRPC (sync)
-- [ ] Http with Reliability (sync)
+- [ ] RabbitMQ (internal events)
+- [ ] GraphQL (gateway)
+- [ ] gRPC (internal calls)
+- [ ] Http with Reliability (internal calls)
 
-### Architecture
-- [ ] CQRS
+### Architecture / Patterns
 - [ ] Clean Architecture
+- [ ] CQRS
 - [ ] EventSourcing
 - [ ] Saga
 - [ ] API Gateway
+- [ ] Anti-Corruption Layer
 
 ### Security
 - [ ] JWT
