@@ -2,7 +2,7 @@
 
 This project is a study case of a microservice application. It is inspired from [coolstore project](https://github.com/vietnam-devs/coolstore-microservices)
  
-I creating it with JS Stack, I **intend** to use:
+I **intend** to use:
 
 ### Languages
 - [ ] Full Javascript
