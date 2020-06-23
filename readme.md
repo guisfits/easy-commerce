@@ -1,6 +1,8 @@
 # EasyCommerce
 
 This project is a case study of a microservices application. It is inspired from [coolstore project](https://github.com/vietnam-devs/coolstore-microservices)
+
+Although that is a _monorepo_, each service will be isolated and run by its own.
  
 I **intend** to use:
 
@@ -8,7 +10,7 @@ I **intend** to use:
 - [ ] Full Javascript
 - [x] Full Typescript
 
-### Runtimes
+### Runtimes and Frameworks
 - [ ] Node
   - [ ] Nest.js
   - [ ] Adonis.js
