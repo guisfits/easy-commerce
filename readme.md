@@ -1,4 +1,4 @@
-# EasyCommerce
+# Easy-Commerce
 
 This project is a case study of a microservices application. It is inspired from [coolstore project](https://github.com/vietnam-devs/coolstore-microservices)
 
