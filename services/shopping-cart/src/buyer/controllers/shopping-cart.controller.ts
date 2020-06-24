@@ -1,11 +1,7 @@
-import { Controller, Patch Get, Post, Put, Delete } from '@nestjs/common';
+import { Controller, Get, Post, Put, Delete } from '@nestjs/common';
 
-@Controller('shopping-cart')
+@Controller('buyer/shopping-cart')
 export class ShoppingCartController {
-
-  constructor(
-
-  ) { }
 
   @Post()
   create(): any {
@@ -34,16 +30,6 @@ export class ShoppingCartController {
 
   @Put(':id')
   checkOut(): any {
-    return;
-  }
-
-  @Get()
-  getAll(): any {
-    return;
-  }
-
-  @Patch(":id")
-  toggleStatus(): any {
     return;
   }
 }
