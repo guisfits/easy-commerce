@@ -37,14 +37,29 @@ With **Shopping Cart**, **Buyer** can **buy** any **product** on the **product l
 
 ## API
 
-- **Buyer** buy any product on the product catalog page -> create the shopping cart with product (**POST**)
-- **Buyer** see the list of products -> get shopping cart with products (**GET**)
-- **Buyer** see the summary information panel (at the client side only)
-- **Buyer** update the amount of product in the shopping cart (**PUT**)
-- **Buyer** delete any product in the shopping cart -> delete product in the shopping cart (**DELETE**)
-- **Buyer** check out my shopping cart -> check out the shopping cart (**PUT**)
-- **SysAdmin** see shopping cart of all buyers with information -> get shopping cart of buyers (**GET**)
-- **SysAdmin** enable/disable any shopping cart of any buyer -> update enabled/disabled shopping cart of buyer (**PUT**)
+- **POST**: `/shopping-cart`   
+  **Buyer** buy any product on the product catalog page -> create the shopping cart with product 
+
+- **GET**: `/shopping-cart/:id/products`   
+  **Buyer** see the list of products -> get shopping cart with products 
+
+- **GET**: `/shopping-cart/:id`  
+  **Buyer** see the summary information panel (at the client side only)
+
+- **PUT**: `/shopping-cart/:id/products`     
+  **Buyer** update the amount of product in the shopping cart 
+
+- **DELETE**: `/shopping-cart/:cartId/products/:productId`     
+  **Buyer** delete any product in the shopping cart -> delete product in the shopping cart 
+
+- **PUT**: `/shopping-cart/:cartId`   
+  **Buyer** check out my shopping cart -> check out the shopping cart 
+
+- **GET**: `/shopping-cart`    
+  **SysAdmin** see shopping cart of all buyers with information -> get shopping cart of buyers 
+
+- **PATCH**: `/shopping-cart/:id/`    
+  **SysAdmin** enable/disable any shopping cart of any buyer -> update enabled/disabled shopping cart of buyer 
 
 ## Technologies
 - Node
