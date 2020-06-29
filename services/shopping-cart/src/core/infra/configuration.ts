@@ -20,8 +20,8 @@ class ShoppingCartConfiguration {
   }
 
   app: AppConfiguration = {
-    environment: process.env.APP_ENVIRONMENT,
-    port: Number(process.env.APP_PORT)
+    environment: process.env.NODE_ENV,
+    port: Number(process.env.NODE_PORT)
   }
 
   db: SQLDatabaseConfiguration = {
@@ -34,4 +34,5 @@ class ShoppingCartConfiguration {
 }
 
 const Configuration = new ShoppingCartConfiguration();
+console.log(Configuration);
 export default Configuration;

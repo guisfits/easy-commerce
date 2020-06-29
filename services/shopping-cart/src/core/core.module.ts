@@ -13,10 +13,11 @@ import path from 'path'
       username: Configuration.db.username,
       password: Configuration.db.password,
       database: Configuration.db.database,
-      entities: [ 
-        path.resolve(__dirname, '..', 'domain', '**', '*.entity.ts') 
+      entities: [
+        `${__dirname}/../domain/**/*.entity.ts`
       ],
     })
   ]
 })
 export class CoreModule { }
+
