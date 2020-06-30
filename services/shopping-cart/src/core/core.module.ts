@@ -1,6 +1,10 @@
 import { Module, Global } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import Configuration from './infra/configuration';
+import InventoryGateway from './gateways/inventory.gateway';
+import PromoGateway from './gateways/promo.gateway';
+import ShippingGateway from './gateways/shipping.gateway';
+import CartsService from './domain/carts/carts.service';
 
 @Global()
 @Module({
@@ -14,6 +18,12 @@ import Configuration from './infra/configuration';
       database: Configuration.db.database,
       autoLoadEntities: true
     })
+  ],
+  providers: [
+    CartsService,
+    InventoryGateway,
+    PromoGateway,
+    ShippingGateway
   ]
 })
 export class CoreModule { }
