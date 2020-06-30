@@ -3,13 +3,14 @@ import CartItem from "./cart-item.entity";
 
 @Entity('carts')
 export default class Cart {
+
   @PrimaryColumn('uuid')
   id: string;
 
   @Column('uuid')
   userId: string;
 
-  @OneToMany(type => CartItem, item => item.cart)
+  @OneToMany(type => CartItem, item => item.cart, { eager: true })
   items: CartItem[]
 
   @Column()
@@ -20,9 +21,6 @@ export default class Cart {
 
   @Column()
   shippingTotal: number;
-
-  @Column()
-  ShippingPromoSavings: number;
 
   @Column()
   cartTotal: number;

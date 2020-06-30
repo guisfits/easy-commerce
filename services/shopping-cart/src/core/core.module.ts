@@ -1,7 +1,6 @@
 import { Module, Global } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import Configuration from './infra/configuration';
-import path from 'path'
 
 @Global()
 @Module({
@@ -13,9 +12,7 @@ import path from 'path'
       username: Configuration.db.username,
       password: Configuration.db.password,
       database: Configuration.db.database,
-      entities: [
-        `${__dirname}/../domain/**/*.entity.ts`
-      ],
+      autoLoadEntities: true
     })
   ]
 })
