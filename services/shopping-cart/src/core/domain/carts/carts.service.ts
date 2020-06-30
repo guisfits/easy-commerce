@@ -4,7 +4,7 @@ import Cart from "./cart.entity";
 import { Repository } from "typeorm";
 import CartItem from "./cart-item.entity";
 import ProductCatalog from "../catalogs/product-catalog.entity";
-import ShippingGateway from './shopping.gateway';
+import Shipping from './shipping.interface';
 import ShoppingCartCheckedOut from 'src/core/events/shopping-cart-checked-out.event';
 
 @Injectable()
@@ -20,8 +20,8 @@ export default class CartsService {
     @InjectRepository(ProductCatalog)
     private productCatalogRepository: Repository<ProductCatalog>,
 
-    private shippingGateway: ShippingGateway
-  ) { } 
+    private shippingGateway: Shipping
+  ) { }
 
   async findCartItem(cartId: string, productId: string): Promise<CartItem> {
     return await this.cartItemsRepository
@@ -53,12 +53,12 @@ export default class CartsService {
   }
 
   async accumulateCartItemQuantity(itemId: string, quantity: number): Promise<void> {
-    this.cartItemsRepository.increment({ id: itemId}, 'quantity', quantity);
+    this.cartItemsRepository.increment({ id: itemId }, 'quantity', quantity);
   }
 
   async calculateCart(cartId: string): Promise<Cart> {
     const cart = await this.cartRepository.findOne(cartId);
-    if(!cart.items) return;
+    if (!cart.items) return;
 
     cart.cartItemTotal = 0;
     cart.items.forEach(item => {
