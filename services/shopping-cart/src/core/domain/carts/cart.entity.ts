@@ -3,7 +3,7 @@ import CartItem from "./cart-item.entity";
 import { v4 as uuid } from 'uuid';
 import Shipping from "./shipping.interface";
 import ShoppingCartCheckedOut from "src/core/events/shopping-cart-checked-out.event";
-import { AggregateRoot, IEvent } from "@nestjs/cqrs";
+import { AggregateRoot } from "@nestjs/cqrs";
 
 @Entity('carts')
 export default class Cart extends AggregateRoot {
