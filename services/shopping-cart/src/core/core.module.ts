@@ -21,9 +21,18 @@ import CartsService from './domain/carts/carts.service';
   ],
   providers: [
     CartsService,
-    InventoryGateway,
-    PromoGateway,
-    ShippingGateway
+    {
+      provide: 'Inventory',
+      useClass: InventoryGateway
+    },
+    {
+      provide: 'Promo',
+      useClass: PromoGateway
+    },
+    {
+      provide: 'Shipping',
+      useClass: ShippingGateway
+    }
   ]
 })
 export class CoreModule { }

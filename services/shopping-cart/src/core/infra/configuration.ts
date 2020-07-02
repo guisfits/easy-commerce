@@ -35,4 +35,5 @@ class ShoppingCartConfiguration {
 
 const Configuration = new ShoppingCartConfiguration();
 console.log(Configuration);
+
 export default Configuration;

@@ -1,4 +1,4 @@
-import { Injectable } from "@nestjs/common";
+import { Injectable, Inject } from "@nestjs/common";
 import { InjectRepository } from "@nestjs/typeorm";
 import Cart from "./cart.entity";
 import { Repository } from "typeorm";
@@ -20,6 +20,7 @@ export default class CartsService {
     @InjectRepository(ProductCatalog)
     private productCatalogRepository: Repository<ProductCatalog>,
 
+    @Inject('Shipping')
     private shippingGateway: Shipping
   ) { }
 
